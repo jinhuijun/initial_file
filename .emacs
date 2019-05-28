@@ -14,7 +14,7 @@
     (add-to-list 'default-frame-alist '(width . 80))
     ;;设置目录
     (setenv "HOME" "D:/emacs/")
-    (setenv "PATH" "D:/emacs/;D:/openjdk/jdk-11.0.2/bin;D:/leiningen/bin;d:/clojure")
+    (setenv "PATH" "D:/emacs/")
     (setq default-directory "~/")
     (add-to-list 'exec-path "~/plugin/")
     ))
@@ -72,26 +72,3 @@
 ;;(scroll-bar-mode 0)
 (global-linum-mode 1)
 (setq linum-format "%d ┃")
-
-;;w3m
-;;(require 'w3m)
-;;(setq w3m-home-page "http://www.baidu.com") ;设置主页 
-;;(require 'mime-w3m)
-;;(setq w3m-search-default-engine "http://www.baidu.com")
-;;(add-to-list 'w3m-search-engine-alist
-;;	     '("Baidu" "https://www.baidu.com"))
-;;(defadvice w3m-search (after change-default activate)
-;;  (let ((engine (nth 1 minibuffer-history)))
-;;    (when (assoc engine w3m-search-engine-alist)
-;;      (setq w3m-search-default-engine engine))))
-;;(setq w3m-use-favicon nil)
-;设置显示图片
-;;(setq w3m-default-display-inline-images t)
-;;(setq w3m-default-toggle-inline-images t)
-;;显示图标  
-;;(setq w3m-show-graphic-icons-in-header-line t) 
-;;(setq w3m-show-graphic-icons-in-mode-line t)
-;;启用cookie  
-;;(setq w3m-use-cookies t)
-;设定w3m运行的参数，分别为使用cookie和使用框架 
-;;(setq w3m-command-arguments '("-cookie" "-F"))
