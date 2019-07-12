@@ -8,16 +8,17 @@
     (custom-set-faces
      '(default ((t (:family "微软雅黑" :foundry "outline" :slant normal :weight normal :height 107 :width normal)))))
     ;;设置窗口
-    (add-to-list 'default-frame-alist '(left . 690))
+    (add-to-list 'default-frame-alist '(left . 390))
     (add-to-list 'default-frame-alist '(top . 0))
     (add-to-list 'default-frame-alist '(height . 35))
-    (add-to-list 'default-frame-alist '(width . 80))
+    (add-to-list 'default-frame-alist '(width . 150))
     ;;设置目录
     (setenv "HOME" "D:/emacs/")
-    (setenv "PATH" "D:/emacs/")
+    (setenv "PATH" "D:/emacs/;D:/graphviz/bin;D:/openjdk/bin;D:/leiningen")
+    (setenv "LEIN_JAR" "d:/leiningen")
+    (setenv "JAVA_HOME" "D:/openjdk")
     (setq default-directory "~/")
-    (add-to-list 'exec-path "~/plugin/")
-    ))
+    (add-to-list 'exec-path "~/plugin/")))
  ((string-equal system-type "darwin") ; Mac OS X
   (progn
     (package-initialize)
@@ -30,11 +31,6 @@
 	    (concat
 	     "/usr/local/bin:"
 	     (getenv "PATH")))
-
-    ;;加载自动补全
-    (require 'auto-complete-config)
-    (ac-config-default)
-    (auto-complete-mode t)
     (custom-set-variables
      '(package-selected-packages (quote (slime auto-complete evil monokai-theme))))
     (custom-set-faces)))
@@ -54,21 +50,45 @@
 
 (require 'rainbow-delimiters)
 (require 'cider)
+(require 'evil)
+(evil-mode 1)
+;;加载自动补全
+(require 'auto-complete-config)
+(ac-config-default)
+(auto-complete-mode t)
+
 
 (global-set-key [f6] 'rainbow-delimiters-mode)
 (global-set-key [f8] 'speedbar)
 (global-set-key [f7] 'evil-mode)
 
-;;markdown
-;;(setq markdown-command "D:/pandoc/pandoc.exe")
-;;(setq markdown-command "D:/MultiMarkdown/bin/multimarkdown.exe")
-
 ;;加载theme
 (load-theme 'monokai t)
+
 
 ;;页面初始化
 (setq inhibit-splash-screen t)
 (tool-bar-mode 0)
-;;(scroll-bar-mode 0)
+(scroll-bar-mode 0)
 (global-linum-mode 1)
 (setq linum-format "%d ┃")
+
+
+
+;; load Mani org Ver 0.12
+;; ============================
+(setq org-todo-keywords
+      '((sequence "显化目标：(t)" "反显化目标：(v)" "抉择：(d)" "充能：(c)" "显化：(i)" "反显化：(a)" "|" "已完成：(o)" "已取消：(x@/!)")
+	(sequence "TODO(T)" "-------->WAITING，(W)" "-------->DEFER，(F)" "|" "DONE(D!)" "CANCELED(C@/!)")))
+(setq org-tag-alist
+      '((:startgroup . nil)
+	("显化" . ?m) ("反显化" . ?a)
+	(:endgroup . nil)
+	(:startgroup . nil)
+	("想象" . ?i) ("可视化" . ?v) ("情感" . ?e) ("呼请" .?p) ("细节" .?p)
+	(:endgroup . nil)
+	(:startgroup . nil)
+	("执0" . ?0) ("执1" . ?1) ("执2" . ?2) ("执3" . ?3) ("执4" . ?4) ("执5" . ?5) ("激励" . ?6)
+	(:endgroup . nil)))
+;;============================
+
