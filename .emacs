@@ -72,6 +72,7 @@
 (scroll-bar-mode 0)
 (global-linum-mode 1)
 (setq linum-format "%d ┃")
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
 
 
