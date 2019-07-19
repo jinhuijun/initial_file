@@ -77,7 +77,7 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 5) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
 (setq scroll-step            1
-
+      scroll-conservatively  10000)
 
 
 ;; load Mani org Ver 0.12
