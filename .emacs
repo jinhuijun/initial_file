@@ -73,6 +73,10 @@
 (global-linum-mode 1)
 (setq linum-format "%d ┃")
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+;; emacs平滑滚动
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 5) ((control) . nil)))
+(setq mouse-wheel-progressive-speed nil)
+(setq scroll-step            1
 
 
 
