@@ -84,7 +84,7 @@
 ;; ============================
 (setq org-todo-keywords
       '((sequence "显化目标：(t)" "抉择：(d)" "充能：(c)" "行动：(i)" "实相过滤：(f)" "|" "已完成：(o)" "已取消：(x@/!)")
-	(sequence " TODO(T)" "-------->WAITING，(W)" "-------->DEFER，(F)" "|" "DONE(D!)" "CANCELED(C@/!)")))
+	(sequence "TODO(T)" "-------->WAITING，(W)" "-------->DEFER，(F)" "|" "DONE(D!)" "CANCELED(C@/!)")))
 
 (setq org-tag-alist
       '((:startgroup . nil)
